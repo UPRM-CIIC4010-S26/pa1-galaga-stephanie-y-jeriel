@@ -11,8 +11,8 @@ Don't forget that you must also fill out an evaluation form in Moodle to conside
 
 ## Grading
 
-(STUDENT NUMBER HERE) (STUDENT NAME HERE) (STUDENT EMAIL HERE)
-(STUDENT NUMBER HERE) (STUDENT NAME HERE) (STUDENT EMAIL HERE)
+(802-25-7748) (Jeriel Rodriguez Torres) (jeriel.rodriguez3@upr.edu)
+(802-25-0480) (Stephanie Garcia Sotomayor) (stephanie.garcia33@upr.edu)
 
 Any project that doesn't compile will receive a 0.
 
