@@ -22,6 +22,7 @@ class Enemy {
         inline static float direction = 0.5;
         inline static int directionChange = 100;
         inline static std::vector<std::pair<std::pair<float, float>, Enemy*>> enemies;
+        inline static int score = 0;
 
         Enemy() {}
 
@@ -34,6 +35,9 @@ class Enemy {
         virtual void draw() = 0;
         virtual void update(std::pair<float, float> pos, HitBox target) = 0;
         virtual void attack(HitBox target) = 0;
+        virtual int getScore() {
+            return 100;
+        }
 
         void frameChange() {
             frameCooldown--;
@@ -58,13 +62,19 @@ class Enemy {
                     }
 
                     if (p.second->health <= 0) {
+                        Enemy::score += p.second->getScore();
+
                         Animation::animations.push_back(
                             Animation(p.second->position.first, p.second->position.second, 155, 0, 33, 33, 30, 30, 4, ImageManager::SpriteSheet)
                         );
                         p.second = nullptr;
                     }
+
                 }
-            }
+
+                    
+                
+        }
             
             for (int i = 0; i < Enemy::enemies.size(); i++) {
                 if ((Enemy::enemies[i].second && Enemy::enemies[i].second->position.first <= -30) || 
@@ -79,5 +89,5 @@ class Enemy {
                 directionChange = 0;
                 direction *= -1;
             }
-        }
+    }
 };
